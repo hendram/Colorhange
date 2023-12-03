@@ -6,13 +6,23 @@ const colors = [ '#0089E0',   '#E53458',   '#8C7A5B',   '#B85E61',   '#7F00CB', 
 const App = () => {
   const [boxColors, setBoxColors] = useState(colors);
 
+// [...boxColors]: This part creates a copy of the boxColors array using the spread operator ([...]). It's crucial to create a copy to avoid directly mutating the state.
+
+//.sort(() => Math.random() - 0.5): The sort method is applied to the copied array. It takes a comparison function as an argument, which is used to determine the sorting order. In this case, the comparison function generates random values between -0.5 and 0.5 for each pair of elements, resulting in a random sorting order.
+
+//setBoxColors(shuffledColors): Finally, the newly shuffled array (shuffledColors) is used to update the state via the setBoxColors function. This triggers a re-render of the component, displaying the boxes with the newly shuffled colors.
+
+ 
   const shuffleColors = () => {
     const shuffledColors = [...boxColors].sort(() => Math.random() - 0.5);
     setBoxColors(shuffledColors);
   };
 
+// Div with className container specific to define layout for desktop with screen width > 600px, and for mobile layout with screen width <= 600 px 
+// using div with className boxes as all className will be using display block or flex or none if not need it 
+
   return (
-   <div>
+  <div>
     <div className="container">
       {/* First section */}
          <div className="section1" >

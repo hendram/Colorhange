@@ -1,7 +1,9 @@
 body {
-  margin: 0px;
+  margin: 0px; /* Reset default body margin */
 }
 
+ /* Styles for larger screens */
+  /* Flexbox styles for layout */
 .container {
   display: flex;
   flex-direction: column;
@@ -124,6 +126,9 @@ body {
 .boxes {
   display: none;
 }
+
+  /* Styles for smaller screens */
+  /* Flexbox styles or other adjustments for responsiveness */
 
 @media (max-width: 600px) {
 
